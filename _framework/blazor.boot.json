@@ -7,7 +7,7 @@
   "linkerEnabled": true,
   "resources": {
     "assembly": {
-      "atleag.dll": "sha256-AYqN3X\/pL2nGJdeCK0ZGpRIi\/PRUrdHyIXBKrx0uxHU=",
+      "atleag.dll": "sha256-Bs5eX6+nceABzsQyLRMToVv6Lm\/Uj+yewGSehP5S7Yk=",
       "Microsoft.AspNetCore.Components.dll": "sha256-EzgDXlkX\/\/Ppy2Bpq0Pd7BeGMw20hCqIepoqoCZHG1s=",
       "Microsoft.AspNetCore.Components.Web.dll": "sha256-LEwVRStLnb2hHA3l1giYF2ryIzPyrwjmKdgZtWMGAOY=",
       "Microsoft.AspNetCore.Components.WebAssembly.dll": "sha256-Wbp8vn\/z0GNAQ1oqlrAwNRKOtbrDVxKLiGY2ioq7DK0=",

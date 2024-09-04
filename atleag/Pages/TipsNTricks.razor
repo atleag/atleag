@@ -1,2 +1,40 @@
 How To Log Into Windows 7 If You Forgot Your Password WITHOUT CD OR SOFTWARE!!
 https://www.youtube.com/watch?v=RCInsJ6BLjY
+
+
+Title: Fetching name of files in a directory
+
+    /// <summary>
+    /// Don't do this
+    /// This method first checks if there are any files in the directory, then calls EnumerateFiles().
+    /// The first check is not needed, as EnumerateFiles() takes care of this.
+    /// </summary>
+    /// <param name="directory"></param>
+    /// <returns></returns>
+    public List<string> FetchFileNamesInDirectory(string directory)
+    {
+        var fileNames = new List<string>();
+
+        if (!Directory.Exists(directory)) return fileNames;
+        if (Directory.GetFiles(directory).Length == 0) return fileNames;
+        fileNames.AddRange(Directory.EnumerateFiles(directory).Select(fileFullName => Path.GetFileName(fileFullName)));
+
+        return fileNames;
+    }
+
+    /// <summary>
+    /// Do this instead.
+    /// </summary>
+    /// <param name="directory"></param>
+    /// <returns></returns>
+    public List<string> FetchFileNamesInDirectory(string directory)
+    {
+        if (!Directory.Exists(directory)) 
+            return new List<string>();
+
+        // Use EnumerateFiles for lazy evaluation and fetch file names directly
+        return Directory.EnumerateFiles(directory)
+            .Select(Path.GetFileName)
+            .ToList();
+    }
+
